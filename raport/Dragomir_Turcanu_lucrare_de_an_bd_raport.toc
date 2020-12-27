@@ -1,0 +1,6 @@
+\contentsline {chapter}{\numberline {1}Conceptul SGBD}{2}{chapter.1}%
+\contentsline {section}{Definiția SGBD}{2}{section*.2}%
+\contentsline {section}{Baze de date relaționale}{2}{section*.2}%
+\contentsline {section}{SGBD în practică}{3}{section*.2}%
+\contentsline {chapter}{\numberline {2}Modelarea Datelor}{5}{chapter.2}%
+\contentsline {section}{Modelul Logic}{5}{section*.3}%
