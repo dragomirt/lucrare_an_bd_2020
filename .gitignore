@@ -1,0 +1,4 @@
+.idea
+application/vendor
+application/.idea
+application/node_modules

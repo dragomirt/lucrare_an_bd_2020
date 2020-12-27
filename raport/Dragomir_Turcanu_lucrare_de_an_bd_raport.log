@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.25)  27 DEC 2020 20:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.25)  27 DEC 2020 20:59
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -796,11 +796,11 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 [5
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 166.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 166.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 164.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 164.
  (./Dragomir_Turcanu_lucrare_de_an_bd_raport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 166.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 166.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 164.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 164.
 Package rerunfilecheck Info: File `Dragomir_Turcanu_lucrare_de_an_bd_raport.out
 ' has not changed.
 (rerunfilecheck)             Checksum: 2C04C3E566791509793B36606CAB26FB;351.
@@ -834,7 +834,7 @@ local/texlive/2020basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></
 usr/local/texlive/2020basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb
 ></usr/local/texlive/2020basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.
 pfb>
-Output written on Dragomir_Turcanu_lucrare_de_an_bd_raport.pdf (6 pages, 512218
+Output written on Dragomir_Turcanu_lucrare_de_an_bd_raport.pdf (6 pages, 512157
  bytes).
 PDF statistics:
  178 PDF objects out of 1000 (max. 8388607)
