@@ -2,11 +2,12 @@
 
 use CodeIgniter\Database\Migration;
 
-class CreateListings extends Migration
+class CreateLocations extends Migration
 {
 	public function up()
 	{
-	    $this->forge->addField([
+
+        $this->forge->addField([
             'id' => [
                 'type' => 'INT',
                 'constraint' => 5,
@@ -14,27 +15,20 @@ class CreateListings extends Migration
                 'auto_increment' => true
             ],
 
-            'name' => [
-                'type' => 'VARCHAR',
-                'constraint' => 250,
-                'null' => false
-            ],
-
-            'user_id' => [
+            'listing_id' => [
                 'type' => 'INT',
                 'constraint' => 5,
                 'unsigned' => true
             ],
 
-            'location_id' => [
-                'type' => 'INT',
-                'constraint' => 5,
-                'unsigned' => true
+            'latitude' => [
+                'type' => 'FLOAT',
+                'constraint' => 10
             ],
 
-            'pricing_id' => [
-                'type' => 'INT',
-                'constraint' => 5
+            'longitude' => [
+              'type' => 'FLOAT',
+              'constraint' => 10
             ],
 
             'created_at' => [
@@ -51,22 +45,15 @@ class CreateListings extends Migration
             ]
         ]);
 
-		$this->forge->addKey('id', true);
-
-        $this->db->disableForeignKeyChecks();
-		$this->forge->addForeignKey('location_id', 'locations', 'id');
-//		$this->db->enableForeignKeyChecks();
-
-
-		$this->forge->addForeignKey('user_id', 'users', 'id');
-
-		$this->forge->createTable('listings');
-	}
+        $this->forge->addKey('id', true);
+        $this->forge->addForeignKey('listing_id', 'listings', 'id');
+        $this->forge->createTable('locations');
+    }
 
 	//--------------------------------------------------------------------
 
 	public function down()
 	{
-	    $this->forge->dropTable('listings');
-	}
+        $this->forge->dropTable('locations');
+    }
 }
