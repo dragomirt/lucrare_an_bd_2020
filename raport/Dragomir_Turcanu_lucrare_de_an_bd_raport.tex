@@ -114,6 +114,7 @@ Exemple ale astfel de SGBD sunt următoarele.
 	\node (listings) at (5, 2) {Listings};
 	\node (locations) at (2, 1) {Locations};
 	\node (options) at (5, -1) {Options};
+	\node[text width=1.5cm, align=center] (option_types) at (8, -1) {Options Types};
 	\node (pricing) at (8, 2) {Pricing};
 	\node (exchanges) at (8, 4) {Exchanges};
 
@@ -133,13 +134,14 @@ Exemple ale astfel de SGBD sunt următoarele.
     	
     	\path [->] (listings) edge (options);
     	\path [->] (options) edge (listings);
+    	
+    	\path [->] (option_types) edge (options);
   
     	\path [->] (listings) edge (pricing);
     	\path [->] (pricing) edge (listings);
     	
     	\path [->] (exchanges) edge (listings);
     	
-%    \path [->] (B) edge[bend right=60] node {$1$} (E); 
 \end{scope}
 \end{tikzpicture}
 
