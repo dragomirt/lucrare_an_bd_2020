@@ -13,6 +13,9 @@
     <div class="container">
         <div class="contact">
             <h2>Contact</h2>
+            <?php if (isset($contactResponse)): ?>
+                <p><?php echo $contactResponse; ?></p>
+            <?php endif;?>
             <form action="/contact" method="POST" class="contactForm">
                 <label for="firstName">First Name</label>
                 <input type="text" name="firstName">

@@ -45,6 +45,9 @@ class Home extends BaseController
         );
 
         $requestModel = new RequestModel();
-        echo $requestModel->insert($data);
+
+        if ($requestModel->insert($data)) {
+            return view('homepage', ['contactResponse' => "All good! We'll get back to you soon!"]);
+        }
     }
 }

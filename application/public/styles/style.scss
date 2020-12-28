@@ -92,6 +92,10 @@ h1, h2, h3, h4, h5, h6 {
       text-align: center;
     }
 
+    p {
+      text-align: center;
+    }
+
     .contactForm {
       display: flex;
       flex-direction: column;
@@ -99,4 +103,39 @@ h1, h2, h3, h4, h5, h6 {
       align-items: center;
     }
   }
+}
+
+.admin {
+  &.requests {
+    table {
+      width: 100%;
+
+      td {
+        text-align: center;
+      }
+    }
+  }
+
+  &.adminMain {
+    .links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .home {
+      text-align: center;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
 }

@@ -74,11 +74,40 @@ h1, h2, h3, h4, h5, h6 {
 .homepage .contact h2 {
   text-align: center;
 }
+.homepage .contact p {
+  text-align: center;
+}
 .homepage .contact .contactForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.admin.requests table {
+  width: 100%;
+}
+.admin.requests table td {
+  text-align: center;
+}
+.admin.adminMain .links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.admin.adminMain .home {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
 }
 
 /*# sourceMappingURL=style.css.map */
