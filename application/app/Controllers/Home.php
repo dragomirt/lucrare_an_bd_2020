@@ -1,5 +1,6 @@
 <?php namespace App\Controllers;
 
+use App\Models\RequestModel;
 use App\Models\UserModel;
 
 class Home extends BaseController
@@ -25,4 +26,25 @@ class Home extends BaseController
 
 	//--------------------------------------------------------------------
 
+    public function contact()
+    {
+        $req = $this->request;
+
+        $firstName = $req->getPost('firstName');
+        $lastName = $req->getPost('lastName');
+        $email = $req->getPost('email');
+        $message = $req->getPost('message');
+        $phone = $req->getPost('phone');
+
+        $data = array(
+            'first_name' => $firstName,
+            'last_name' => $lastName,
+            'email' => $email,
+            'message' => $message,
+            'phone' => $phone
+        );
+
+        $requestModel = new RequestModel();
+        echo $requestModel->insert($data);
+    }
 }

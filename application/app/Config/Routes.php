@@ -33,6 +33,7 @@ $routes->setAutoRoute(false);
 $routes->get('/', 'Home::index');
 
 $routes->get('/testadd', 'Home::addUser');
+$routes->post('/contact', 'Home::contact');
 
 /**
  * --------------------------------------------------------------------
