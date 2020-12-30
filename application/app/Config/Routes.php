@@ -38,6 +38,13 @@ $routes->post('/contact', 'Home::contact');
 //Admin
 $routes->get('/admin', 'Admin::main');
 $routes->get('/admin/requests', 'Admin::requests');
+$routes->get('/admin/users', 'Admin::users');
+$routes->get('/admin/users/create', 'Admin::showCreate');
+
+// Users
+$routes->post('admin/users/create', 'Admin::processUserCreate');
+$routes->get('/admin/users/(:num)', 'Admin::show/$1');
+
 
 /**
  * --------------------------------------------------------------------

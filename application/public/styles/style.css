@@ -84,10 +84,10 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
-.admin.requests table {
+.admin.requests table, .admin.users table {
   width: 100%;
 }
-.admin.requests table td {
+.admin.requests table td, .admin.users table td {
   text-align: center;
 }
 .admin.adminMain .links {
@@ -100,6 +100,12 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   margin: 0 auto;
   display: block;
+}
+.admin.usersCreate form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 footer {
