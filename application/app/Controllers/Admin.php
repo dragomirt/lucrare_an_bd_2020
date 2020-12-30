@@ -65,7 +65,7 @@ class Admin extends BaseController
         return view('admin/users/create', ['error' => "Something went wrong, please recheck the data!"]);
     }
 
-    public function show($id)
+    public function usersShow($id)
     {
         $usersModel = new UserModel();
         $userDataRaw = $usersModel->find($id);
@@ -75,5 +75,46 @@ class Admin extends BaseController
         }
 
         return view('admin/users/index', ['createResponse' => "There is no user with id $id!"]);
+    }
+
+    public function usersEdit($id)
+    {
+        $usersModel = new UserModel();
+        $userDataRaw = $usersModel->find($id);
+        if ($userDataRaw) {
+            $userData = (object) $userDataRaw;
+            return view('admin/users/create', compact('userData'));
+        }
+
+        return view('admin/users/index', ['createResponse' => "There is no user with id $id!"]);
+    }
+
+    public function usersEditProcessing()
+    {
+        $req = $this->request;
+
+        $id = $req->getPost('id');
+        $firstName = $req->getPost('firstName');
+        $lastName = $req->getPost('lastName');
+        $email = $req->getPost('email');
+        $dob = $req->getPost('dob');
+        $phone = $req->getPost('phone');
+        $bio = $req->getPost('bio');
+
+        $data = array(
+            'first_name' => $firstName,
+            'last_name' => $lastName,
+            'email' => $email,
+            'dob' => $dob,
+            'bio' => $bio,
+            'phone' => $phone
+        );
+
+        $usersModel = new UserModel();
+
+        if ($usersModel->update($id, $data)) {
+            return $this->usersShow($id);
+        }
+
     }
 }

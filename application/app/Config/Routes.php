@@ -43,7 +43,9 @@ $routes->get('/admin/users/create', 'Admin::showCreate');
 
 // Users
 $routes->post('admin/users/create', 'Admin::processUserCreate');
-$routes->get('/admin/users/(:num)', 'Admin::show/$1');
+$routes->get('/admin/users/(:num)', 'Admin::usersShow/$1');
+$routes->get('/admin/users/edit/(:num)', 'Admin::usersEdit/$1');
+$routes->post('/admin/users/edit', 'Admin::usersEditProcessing');
 
 
 /**
