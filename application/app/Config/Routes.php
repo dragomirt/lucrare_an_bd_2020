@@ -47,6 +47,12 @@ $routes->get('/admin/users/(:num)', 'Admin::usersShow/$1');
 $routes->get('/admin/users/edit/(:num)', 'Admin::usersEdit/$1');
 $routes->post('/admin/users/edit', 'Admin::usersEditProcessing');
 
+// Option types
+$routes->get('/admin/option_types', 'Admin::showOptionTypes');
+$routes->get('/admin/option_types/create', 'Admin::addOptionTypeShow');
+$routes->post('/admin/option_types/create', 'Admin::processOptionTypeCreate');
+$routes->get('/admin/option_types/remove/(:num)', 'Admin::removeOptionType/$1');
+
 
 /**
  * --------------------------------------------------------------------

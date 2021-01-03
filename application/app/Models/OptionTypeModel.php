@@ -4,17 +4,17 @@
 namespace App\Models;
 
 
-class UserModel extends \CodeIgniter\Model
+class OptionTypeModel extends \CodeIgniter\Model
 {
-    protected $table      = 'users';
+    protected $table      = 'option_types';
     protected $primaryKey = 'id';
 
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['first_name', 'last_name', 'email', 'bio', 'dob', 'phone'];
+    protected $allowedFields = ['name'];
 
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
 
