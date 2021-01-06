@@ -1,5 +1,5 @@
 <?php echo view('templates/header', ['title' => "Admin Menu"]); ?>
-    <div class="admin users usersCreate">
+    <div class="admin users optionTypesCreate">
         <div class="container">
 
             <a href="/admin">Înapoi</a>

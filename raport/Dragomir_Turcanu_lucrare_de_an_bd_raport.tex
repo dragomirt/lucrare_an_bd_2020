@@ -23,7 +23,7 @@
 \vspace*{\drop}
 \centering
 {\LARGE Universitatea Tehnică a Moldovei}\\[2\baselineskip]
-{\LARGE\sffamily Serviciul schimb de apartamente}\par
+{\LARGE\sffamily Serviciul monitoring valutar}\par
 \vfill
 {\LARGE LUCRARE DE AN\\
 \small la disciplina \\
@@ -101,43 +101,44 @@ Exemple ale astfel de SGBD sunt următoarele.
 
 \chapter{Modelarea Datelor}
 
+\section{Domeniul de studiu}
+
+Un concept bine cunoscut oricărui investor, economist profesional, ba și unei persoane de rând, este următorul fapt: banii, bine-investiți aduc profit. Prin urmare, o persoană co-interesată, este întâlnită cu o multitudine de opțiuni pentru a o obține rezultatul dorit. În joc apar investițiile imobiliare, harii de preț, obiecte de epocă, dar ce-a mai răspândit în spațiul R.M., este cu siguranță inveția în valută. Diversificarea portfoliului valutar, aduce o încredere în viitorul apropiat și chiar îndelungat, fiind amplificat pe spațiul CSI de către pierderile usturătoare din anii 90'.
+
+\emph{Ca și orice serviciu bazat pe cantitatea și calitatea datelor, alegerea valutei, monitorizarea momentului optimal de cumpărare și vânzare și calcularea tendenței de creștere și scădere a valutei este o necesitate vitală pentru orice \textbf{investor valutar}.}
+
+Exact pentru acest scop a fost luată decizia să se creeze un sistem ușor-accesibil, bazat pe o interfață reactivă, ce ar permite o interacțiune cu fricție minimală, ce ar permite unui utilizator să colecteze toată informația necesară în timpul minimal, luând în considerare ritmul \textbf{supra-accelerat} a vieții cotidiene.
+
 \section{Modelul Logic}
 
+\begin{center}
 \begin{tikzpicture}
 \begin{scope}[every node/.style={circle,thick,draw}]
-    \node (users) at (3,4) {Users};
-	\node (listings) at (5, 2) {Listings};
-	\node (locations) at (2, 1) {Locations};
-	\node (options) at (5, -1) {Options};
-	\node[text width=1.5cm, align=center] (option_types) at (8, -1) {Options Types};
-	\node (pricing) at (8, 2) {Pricing};
-	\node (exchanges) at (8, 4) {Exchanges};
+    \node (currency) at (6,4) {Valuta};
+	\node[text width=1.5cm, align=center] (currency_value) at (9, 4) {Valoarea Valutei};
 
 \end{scope}
 
 \begin{scope}[>={Stealth[black]},
               every node/.style={fill=white,circle},
               every edge/.style={draw=blue,very thick}]
-    \path [->] (users) edge (listings);
-    \path [->] (listings) edge (users);
-    	
-    	\path [->] (listings) edge (users);
-    	\path [->] (users) edge (listings);
-    	
-    	\path [->] (listings) edge (locations);
-    	\path [->] (locations) edge (listings);
-    	
-    	\path [->] (listings) edge (options);
-    	\path [->] (options) edge (listings);
-    	
-    	\path [->] (option_types) edge (options);
-  
-    	\path [->] (listings) edge (pricing);
-    	\path [->] (pricing) edge (listings);
-    	
-    	\path [->] (exchanges) edge (listings);
+    \path [->] (currency_value) edge (currency);
+
     	
 \end{scope}
 \end{tikzpicture}
+\end{center}
+
+
+Probabil modelul logic al aplicației curente pare foarte simplistic, dar secretul în cazul dat este faptul, ca acesta își îndeplinește misiunea într-un mod rapid și pragmatic. În continuare prezint machetul bazei de date.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=\textwidth]{currency_tracker}
+\end{figure}
+
+Odată ce avem definită structura exactă a bazei de date, este timpul de a discuta ideea și apilcarea conceptului dat.
+
+
 
 \end{document}

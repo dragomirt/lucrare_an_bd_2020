@@ -53,6 +53,11 @@ $routes->get('/admin/option_types/create', 'Admin::addOptionTypeShow');
 $routes->post('/admin/option_types/create', 'Admin::processOptionTypeCreate');
 $routes->get('/admin/option_types/remove/(:num)', 'Admin::removeOptionType/$1');
 
+// Listings
+$routes->get('/admin/listings', 'Admin\ListingsController::index');
+$routes->get('/admin/listings/create', 'Admin\ListingsController::create');
+$routes->post('/admin/listings/create', 'Admin\ListingsController::addEntry');
+
 
 /**
  * --------------------------------------------------------------------
