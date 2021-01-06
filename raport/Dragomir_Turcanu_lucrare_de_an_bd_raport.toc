@@ -5,3 +5,10 @@
 \contentsline {chapter}{\numberline {2}Modelarea Datelor}{5}{chapter.2}%
 \contentsline {section}{Domeniul de studiu}{5}{section*.3}%
 \contentsline {section}{Modelul Logic}{5}{section*.3}%
+\contentsline {chapter}{\numberline {3}Aspecte Tehnice}{7}{chapter.3}%
+\contentsline {section}{Stack-ul Tehnologic}{7}{section*.4}%
+\contentsline {section}{Concepția}{7}{section*.4}%
+\contentsline {section}{Front End}{8}{section*.4}%
+\contentsline {section}{Back End}{9}{section*.4}%
+\contentsline {section}{Adminstrare}{10}{section*.4}%
+\contentsline {chapter}{\numberline {4}Concluzie}{13}{chapter.4}%
