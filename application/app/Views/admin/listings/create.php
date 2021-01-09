@@ -20,13 +20,17 @@
                 <input type="number" name="user_id" value="<?php echo $issetListing ? $listingData->user_id : ''; ?>">
 
                 <label for="name">Adresa</label>
-                <input type="number" name="address" value="<?php echo $issetListing ? $listingData->address : ''; ?>">
+                <input type="text" name="location" value="<?php echo $issetListing ? $listingData->location : ''; ?>">
 
                 <label for="name">Pretul per noapte ( $ )</label>
-                <input type="number" name="pricing" value="<?php echo $issetListing ? $listingData->price : ''; ?>">
+                <input type="number" name="pricing" value="<?php echo $issetListing ? $listingData->pricing : ''; ?>">
 
-                <label for="name">Linkul spre imagine</label>
-                <input type="text" name="image" value="<?php echo $issetListing ? $listingData->image : ''; ?>">
+                <?php $optionsModel = new \App\Models\OptionTypeModel(); $allOptions = $optionsModel->findAll(); ?>
+                <?php if ($allOptions):?>
+                    <?php foreach ($allOptions as $option): ?>
+                        <input type="checkbox" name="option_<?php echo $option['id'];?>"><?php echo $option['name']; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
 
                 <input type="submit" value="<?php echo $issetListing ? 'Actualizeaza!' : 'Creeaza!'; ?>">
             </form>

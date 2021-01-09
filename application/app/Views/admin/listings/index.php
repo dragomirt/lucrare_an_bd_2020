@@ -12,10 +12,10 @@
             <table>
                 <tr>
                     <th>ID</th>
-                    <th>Image</th>
                     <th>Name</th>
                     <th>User Id</th>
-                    <th>Location Id</th>
+                    <th>Location</th>
+                    <th>Pretul ( $ / noapte )</th>
                     <th>Creat</th>
                     <th>Actualizat</th>
                 </tr>
@@ -25,6 +25,11 @@
                         <tr onclick="window.location.href='/admin/listings/<?php echo $entry->id; ?>'">
                             <td><?php echo $entry->id; ?></td>
                             <td><?php echo $entry->name; ?></td>
+                            <td><?php echo $entry->user_id; ?></td>
+                            <td><?php echo $entry->location; ?></td>
+                            <td><?php echo $entry->pricing; ?></td>
+                            <td><?php echo $entry->created_at; ?></td>
+                            <td><?php echo $entry->updated_at; ?></td>
                             <td><a href="/admin/listings/remove/<?php echo $entry->id; ?>">X</a></td>
                         </tr>
                     <?php endforeach;?>

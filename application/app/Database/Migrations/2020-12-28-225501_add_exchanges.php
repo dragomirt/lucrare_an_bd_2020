@@ -45,6 +45,6 @@ class AddExchanges extends Migration
 
 	public function down()
 	{
-		$this->forge->dropColumn('exchanges');
+		$this->forge->dropTable('exchanges');
 	}
 }

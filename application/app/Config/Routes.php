@@ -57,6 +57,7 @@ $routes->get('/admin/option_types/remove/(:num)', 'Admin::removeOptionType/$1');
 $routes->get('/admin/listings', 'Admin\ListingsController::index');
 $routes->get('/admin/listings/create', 'Admin\ListingsController::create');
 $routes->post('/admin/listings/create', 'Admin\ListingsController::addEntry');
+$routes->get('/admin/listings/remove/(:num)', 'Admin\ListingsController::remove/$1');
 
 
 /**

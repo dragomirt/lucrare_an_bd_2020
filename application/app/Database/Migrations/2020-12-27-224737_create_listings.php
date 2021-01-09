@@ -26,15 +26,15 @@ class CreateListings extends Migration
                 'unsigned' => true
             ],
 
-            'location_id' => [
-                'type' => 'INT',
-                'constraint' => 5,
-                'unsigned' => true
+            'location' => [
+                'type' => 'VARCHAR',
+                'constraint' => 250,
+                'null' => false
             ],
 
-            'pricing_id' => [
-                'type' => 'INT',
-                'constraint' => 5
+            'pricing' => [
+                'type' => 'FLOAT',
+                'constraint' => 11
             ],
 
             'created_at' => [
@@ -52,11 +52,6 @@ class CreateListings extends Migration
         ]);
 
 		$this->forge->addKey('id', true);
-
-        $this->db->disableForeignKeyChecks();
-		$this->forge->addForeignKey('location_id', 'locations', 'id');
-//		$this->db->enableForeignKeyChecks();
-
 
 		$this->forge->addForeignKey('user_id', 'users', 'id');
 

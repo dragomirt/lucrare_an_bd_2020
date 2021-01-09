@@ -4,17 +4,17 @@
 namespace App\Models;
 
 
-class LocationModel extends \CodeIgniter\Model
+class OptionModel extends \CodeIgniter\Model
 {
-    protected $table      = 'locations';
+    protected $table      = 'options';
     protected $primaryKey = 'id';
 
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['listing_id', 'latitude', 'longitude'];
+    protected $allowedFields = ['listing_id', 'type_id', 'value'];
 
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
 

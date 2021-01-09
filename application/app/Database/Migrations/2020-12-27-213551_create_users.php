@@ -39,11 +39,6 @@ class CreateUsers extends Migration
                 'constraint' => 20,
                 'null' => true
             ],
-            'password' => [
-                'type' => 'VARCHAR',
-                'constraint' => 250,
-                'null' => false
-            ],
             'created_at' => [
                 'type' => 'VARCHAR',
                 'constraint' => 250,

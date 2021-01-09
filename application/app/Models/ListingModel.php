@@ -12,7 +12,7 @@ class ListingModel extends \CodeIgniter\Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['name', 'user_id', 'location_id', 'pricing_id', 'image', 'created_at', 'updated_at'];
+    protected $allowedFields = ['name', 'user_id', 'location', 'pricing', 'created_at', 'updated_at'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';

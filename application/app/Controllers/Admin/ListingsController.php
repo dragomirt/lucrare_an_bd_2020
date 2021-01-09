@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\ListingModel;
 use App\Models\LocationModel;
+use App\Models\OptionModel;
 
 class ListingsController extends BaseController
 {
@@ -24,13 +25,64 @@ class ListingsController extends BaseController
         $req = $this->request;
         $name = $req->getPost('name');
         $user_id = $req->getPost('user_id');
-        $address = $req->getPost('address');
-        $price_per_night = $req->getPost('pricing');
-        $image = $req->getPost('image');
+        $location = $req->getPost('location');
+        $pricing = $req->getPost('pricing');
+        $options = array_filter($req->getPost(), function($x) {return strpos($x, "option") !== false;}, ARRAY_FILTER_USE_KEY);
 
-        $location = new LocationModel();
-        if ($location->insert(['name' => $address, 'longitude' => '', 'latitude' => ''])) {
+        $listingObject = new ListingModel();
+        $data = array(
+            'name' => $name,
+            'user_id' => $user_id,
+            'location' => $location,
+            'pricing' => $pricing
+        );
 
+        if ($listingId = $listingObject->insert($data)) {
+            $optionModel = new OptionModel();
+
+            foreach ($options as $option => $value) {
+                $exploded = explode("_", $option);
+                $id = $exploded[1];
+                $raw_value = $value;
+                $final_value = 0;
+                if ($raw_value === 'on') {
+                    $final_value = 1;
+                }
+
+                $option_values = array(
+                    "listing_id" => $listingId,
+                    'type_id' => (int) $id,
+                    'value' => $final_value
+                );
+                $optionModel->insert($option_values);
+            }
+
+
+            $allEntries = (new ListingModel())->findAll();
+            $createResponse = "Oferta \" $name \" a fost cu succes creata!";
+            return view('admin/listings/index', compact('allEntries', 'createResponse'));
         }
+    }
+
+    public function remove($id) {
+        $listingModel = new ListingModel();
+        $entry = $listingModel->find($id);
+        if ($entry) {
+            $name = $entry['name'];
+
+            $optionModel = new OptionModel();
+            $listingOptions = $optionModel->where('listing_id', $id)->findAll();
+            foreach ($listingOptions as $option) {
+                $optionModel->delete($option['id']);
+            }
+
+            if ($listingModel->delete($id)) {
+                $allEntries = (new ListingModel())->findAll();
+                $createResponse = "Oferta \" $name \" a fost cu succes stearsa!";
+                return view('admin/listings/index', compact('allEntries', 'createResponse'));
+            }
+        }
+
+        $this->index();
     }
 }
