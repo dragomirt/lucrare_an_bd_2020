@@ -54,4 +54,17 @@ class ExchangeController extends \CodeIgniter\Controller
         $createResponse = "Intrarea cu idul $id nu a fost gasita!";
         return view('admin/exchanges/index', compact('allEntries', 'createResponse'));
     }
+
+    public function remove($id) {
+        $exchangeModel = new ExchangeModel();
+        if ($exchangeModel->delete($id)) {
+            $allEntries = $exchangeModel->findAll();
+            $createResponse = "Intrarea cu idul $id a fost stearsa!";
+            return view('admin/exchanges/index', compact('allEntries', 'createResponse'));
+        }
+
+        $allEntries = $exchangeModel->findAll();
+        $createResponse = "Intrarea cu idul $id nu a fost gasita!";
+        return view('admin/exchanges/index', compact('allEntries', 'createResponse'));
+    }
 }

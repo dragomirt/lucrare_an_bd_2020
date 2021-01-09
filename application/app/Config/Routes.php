@@ -67,6 +67,7 @@ $routes->get('/admin/exchanges','Admin\ExchangeController::index');
 $routes->get('/admin/exchanges/(:num)','Admin\ExchangeController::show/$1');
 $routes->get('/admin/exchanges/create','Admin\ExchangeController::showCreate');
 $routes->post('/admin/exchanges/create','Admin\ExchangeController::create');
+$routes->get('/admin/exchanges/remove/(:num)','Admin\ExchangeController::remove/$1');
 /**
  * --------------------------------------------------------------------
  * Additional Routing
