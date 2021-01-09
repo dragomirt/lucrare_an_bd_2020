@@ -23,8 +23,10 @@
 
                 <?php if (isset($allEntries)): ?>
                     <?php foreach($allEntries as $entry): $entry = (object) $entry;?>
-                        <tr onclick="window.location.href='/admin/listings/<?php echo $entry->getId(); ?>'">
-                            <td><?php echo $entry->getId(); ?></td>
+                        <tr>
+                            <td><a href="/admin/listings/<?php echo $entry->getId(); ?>">
+                                    <?php echo $entry->getId(); ?>
+                                </a></td>
                             <td><?php echo $entry->getName(); ?></td>
                             <td><?php echo $entry->getUser()['first_name'] . ' ' . $entry->getUser()['last_name'] . ' ( ' .$entry->getUserId() . ' )';?></td>
                             <td><?php echo $entry->getLocation(); ?></td>

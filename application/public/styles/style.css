@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
   display: block;
 }
-.admin.usersCreate form, .admin.listingsCreate form {
+.admin.usersCreate form, .admin.listingsCreate form, .admin.exchangesCreate form {
   display: flex;
   flex-direction: column;
   justify-content: center;

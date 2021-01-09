@@ -62,7 +62,10 @@ $routes->get('/admin/listings/edit/(:num)', 'Admin\ListingsController::showEdit/
 $routes->post('/admin/listings/edit', 'Admin\ListingsController::edit');
 $routes->get('/admin/listings/(:num)', 'Admin\ListingsController::show/$1');
 
-
+// Exchanges
+$routes->get('/admin/exchanges','Admin\ExchangeController::index');
+$routes->get('/admin/exchanges/create','Admin\ExchangeController::showCreate');
+$routes->post('/admin/exchanges/create','Admin\ExchangeController::create');
 /**
  * --------------------------------------------------------------------
  * Additional Routing
