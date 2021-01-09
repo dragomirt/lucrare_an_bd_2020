@@ -25,13 +25,17 @@
                 <label for="name">Pretul per noapte ( $ )</label>
                 <input type="number" name="pricing" value="<?php echo $issetListing ? $listingData->pricing : ''; ?>">
 
+
+                <br><br>
+                <h4>Optiuni</h4>
                 <?php $optionsModel = new \App\Models\OptionTypeModel(); $allOptions = $optionsModel->findAll(); ?>
                 <?php if ($allOptions):?>
                     <?php foreach ($allOptions as $option): ?>
-                        <input type="checkbox" name="option_<?php echo $option['id'];?>"><?php echo $option['name']; ?>
+                        <label for="" class="option"><input type="checkbox" name="option_<?php echo $option['id'];?>"><?php echo $option['name']; ?></label>
                     <?php endforeach; ?>
                 <?php endif; ?>
 
+                <br><br>
                 <input type="submit" value="<?php echo $issetListing ? 'Actualizeaza!' : 'Creeaza!'; ?>">
             </form>
 
