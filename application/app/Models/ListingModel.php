@@ -9,7 +9,7 @@ class ListingModel extends \CodeIgniter\Model
     protected $table      = 'listings';
     protected $primaryKey = 'id';
 
-    protected $returnType     = 'array';
+    protected $returnType     = 'App\Entities\Listing';
     protected $useSoftDeletes = false;
 
     protected $allowedFields = ['name', 'user_id', 'location', 'pricing', 'created_at', 'updated_at'];

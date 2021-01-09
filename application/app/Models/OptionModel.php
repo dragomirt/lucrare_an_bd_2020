@@ -9,7 +9,7 @@ class OptionModel extends \CodeIgniter\Model
     protected $table      = 'options';
     protected $primaryKey = 'id';
 
-    protected $returnType     = 'array';
+    protected $returnType     = 'App\Entities\Option';
     protected $useSoftDeletes = false;
 
     protected $allowedFields = ['listing_id', 'type_id', 'value'];

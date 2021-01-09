@@ -16,6 +16,7 @@
                     <th>User Id</th>
                     <th>Location</th>
                     <th>Pretul ( $ / noapte )</th>
+                    <th>Optiuni</th>
                     <th>Creat</th>
                     <th>Actualizat</th>
                 </tr>
@@ -28,6 +29,10 @@
                             <td><?php echo $entry->user_id; ?></td>
                             <td><?php echo $entry->location; ?></td>
                             <td><?php echo $entry->pricing; ?></td>
+                            <td><?php foreach($entry->getOptions() as $option):  ?>
+                                <?php echo $option->getName();?><br>
+                                <?php endforeach;?>
+                            </td>
                             <td><?php echo $entry->created_at; ?></td>
                             <td><?php echo $entry->updated_at; ?></td>
                             <td><a href="/admin/listings/remove/<?php echo $entry->id; ?>">X</a></td>
