@@ -67,4 +67,42 @@ class ExchangeController extends \CodeIgniter\Controller
         $createResponse = "Intrarea cu idul $id nu a fost gasita!";
         return view('admin/exchanges/index', compact('allEntries', 'createResponse'));
     }
+
+    public function showEdit($id) {
+        $exchangeModel = new ExchangeModel();
+        $entityData = $exchangeModel->find($id);
+        if ($entityData) {
+            return view('admin/exchanges/create', compact('entityData'));
+        }
+
+        $allEntries = $exchangeModel->findAll();
+        $createResponse = "Intrarea cu idul $id nu a fost gasita!";
+        return view('admin/exchanges/index', compact('allEntries', 'createResponse'));
+    }
+
+    public function edit() {
+        $req = $this->request;
+        $id = $req->getPost('id');
+        $listingId1 = $req->getPost('listing_id1');
+        $listingId2 = $req->getPost('listing_id2');
+        $profit = $req->getPost('profit');
+
+        $data = array(
+            'listing_id1' => $listingId1,
+            'listing_id2' => $listingId2,
+            'profit' => $profit
+        );
+
+        $exchangeModel = new ExchangeModel();
+        if ($exchangeModel->update($id, $data)) {
+            $allEntries = $exchangeModel->findAll();
+
+            $createResponse = "Intrarea cu idul $id a fost cu succes modificata!";
+            return view('admin/exchanges/index', compact('allEntries', 'createResponse'));
+        }
+
+        $allEntries = $exchangeModel->findAll();
+        $createResponse = "Eroare!";
+        return view('admin/exchanges/index', compact('allEntries', 'createResponse'));
+    }
 }

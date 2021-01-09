@@ -9,18 +9,18 @@
                 <p style="text-align: center"><?php echo $error; ?></p>
             <?php endif; ?>
 
-            <?php $issetExchange = isset($exchangeData); ?>
+            <?php $issetExchange = isset($entityData); ?>
             <form action="<?php echo $issetExchange ? '/admin/exchanges/edit': '/admin/exchanges/create'; ?>" method="POST">
-                <input type="hidden" name="id" value="<?php echo $issetExchange ? $listingData->getId() : ''; ?>">
+                <input type="hidden" name="id" value="<?php echo $issetExchange ? $entityData->getId() : ''; ?>">
 
                 <label for="name">Identificatorul Ofertei 1</label>
-                <input type="number" name="listing_id1" value="<?php echo $issetExchange ? $listingData->getName() : ''; ?>">
+                <input type="number" name="listing_id1" value="<?php echo $issetExchange ? $entityData->getListingId1() : ''; ?>">
 
                 <label for="name">Identificatorul Ofertei 2</label>
-                <input type="number" name="listing_id2" value="<?php echo $issetExchange ? $listingData->getName() : ''; ?>">
+                <input type="number" name="listing_id2" value="<?php echo $issetExchange ? $entityData->getListingId2() : ''; ?>">
 
                 <label for="name">Profit</label>
-                <input type="number" name="profit" value="<?php echo $issetExchange ? $listingData->getUserId() : ''; ?>">
+                <input type="number" name="profit" value="<?php echo $issetExchange ? $entityData->getProfit() : ''; ?>">
 
                 <input type="submit" value="<?php echo $issetExchange ? 'Actualizeaza!' : 'Creeaza!'; ?>">
             </form>
