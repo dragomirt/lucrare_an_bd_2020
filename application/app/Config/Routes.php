@@ -70,6 +70,14 @@ $routes->post('/admin/exchanges/create','Admin\ExchangeController::create');
 $routes->get('/admin/exchanges/remove/(:num)','Admin\ExchangeController::remove/$1');
 $routes->get('/admin/exchanges/edit/(:num)','Admin\ExchangeController::showEdit/$1');
 $routes->post('/admin/exchanges/edit','Admin\ExchangeController::edit');
+
+// Reports
+$routes->get('/admin/reports', 'Admin\ReportsController::index');
+
+$routes->get('/admin/reports/time', 'Admin\ReportsController::showTime');
+$routes->post('/admin/reports/time', 'Admin\ReportsController::time');
+
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing
