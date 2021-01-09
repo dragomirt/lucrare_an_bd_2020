@@ -42,4 +42,16 @@ class ExchangeController extends \CodeIgniter\Controller
         $createResponse = "Eroare!";
         return view('admin/exchanges/index', compact('allEntries', 'createResponse'));
     }
+
+    public function show($id) {
+        $exchangeModel = new ExchangeModel();
+        $entryData = $exchangeModel->find($id);
+        if ($entryData) {
+            return view('admin/exchanges/show', compact('entryData'));
+        }
+
+        $allEntries = $exchangeModel->findAll();
+        $createResponse = "Intrarea cu idul $id nu a fost gasita!";
+        return view('admin/exchanges/index', compact('allEntries', 'createResponse'));
+    }
 }
