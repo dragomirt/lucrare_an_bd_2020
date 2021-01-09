@@ -13,7 +13,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>User Id</th>
+                    <th>User</th>
                     <th>Location</th>
                     <th>Pretul ( $ / noapte )</th>
                     <th>Optiuni</th>
@@ -26,7 +26,7 @@
                         <tr onclick="window.location.href='/admin/listings/<?php echo $entry->getId(); ?>'">
                             <td><?php echo $entry->getId(); ?></td>
                             <td><?php echo $entry->getName(); ?></td>
-                            <td><?php echo $entry->getUserId(); ?></td>
+                            <td><?php echo $entry->getUser()['first_name'] . ' ' . $entry->getUser()['last_name'] . ' ( ' .$entry->getUserId() . ' )';?></td>
                             <td><?php echo $entry->getLocation(); ?></td>
                             <td><?php echo $entry->getPricing(); ?></td>
                             <td><?php foreach($entry->getOptions() as $option):  ?>

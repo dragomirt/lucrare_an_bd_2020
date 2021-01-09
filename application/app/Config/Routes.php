@@ -58,6 +58,9 @@ $routes->get('/admin/listings', 'Admin\ListingsController::index');
 $routes->get('/admin/listings/create', 'Admin\ListingsController::create');
 $routes->post('/admin/listings/create', 'Admin\ListingsController::addEntry');
 $routes->get('/admin/listings/remove/(:num)', 'Admin\ListingsController::remove/$1');
+$routes->get('/admin/listings/edit/(:num)', 'Admin\ListingsController::showEdit/$1');
+$routes->post('/admin/listings/edit', 'Admin\ListingsController::edit');
+$routes->get('/admin/listings/(:num)', 'Admin\ListingsController::show/$1');
 
 
 /**

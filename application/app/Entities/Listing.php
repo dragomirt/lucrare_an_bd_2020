@@ -2,6 +2,7 @@
 namespace App\Entities;
 
 use App\Models\OptionModel;
+use App\Models\UserModel;
 
 class Listing extends \CodeIgniter\Entity
 {
@@ -35,7 +36,8 @@ class Listing extends \CodeIgniter\Entity
     }
 
     public function getUser() {
-        return $this->attributes['user_id'];
+        $userModel = new UserModel();
+        return $userModel->find($this->getUserId());
     }
 
     public function getLocation() {
