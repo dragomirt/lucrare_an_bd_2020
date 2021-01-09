@@ -11,19 +11,19 @@
 
             <?php $issetListing = isset($listingData); ?>
             <form action="<?php echo $issetListing ? '/admin/listings/edit': '/admin/listings/create'; ?>" method="POST">
-                <input type="hidden" name="id" value="<?php echo $issetListing ? $listingData->id : ''; ?>">
+                <input type="hidden" name="id" value="<?php echo $issetListing ? $listingData->getId() : ''; ?>">
 
                 <label for="name">Denumirea Ofertei</label>
-                <input type="text" name="name" value="<?php echo $issetListing ? $listingData->name : ''; ?>">
+                <input type="text" name="name" value="<?php echo $issetListing ? $listingData->getName() : ''; ?>">
 
                 <label for="name">Identificatorul utilizatorului</label>
-                <input type="number" name="user_id" value="<?php echo $issetListing ? $listingData->user_id : ''; ?>">
+                <input type="number" name="user_id" value="<?php echo $issetListing ? $listingData->getUserId() : ''; ?>">
 
                 <label for="name">Adresa</label>
-                <input type="text" name="location" value="<?php echo $issetListing ? $listingData->location : ''; ?>">
+                <input type="text" name="location" value="<?php echo $issetListing ? $listingData->getLocation() : ''; ?>">
 
                 <label for="name">Pretul per noapte ( $ )</label>
-                <input type="number" name="pricing" value="<?php echo $issetListing ? $listingData->pricing : ''; ?>">
+                <input type="number" name="pricing" value="<?php echo $issetListing ? $listingData->getPricing() : ''; ?>">
 
 
                 <br><br>

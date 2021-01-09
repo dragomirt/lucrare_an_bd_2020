@@ -23,18 +23,18 @@
 
                 <?php if (isset($allEntries)): ?>
                     <?php foreach($allEntries as $entry): $entry = (object) $entry;?>
-                        <tr onclick="window.location.href='/admin/listings/<?php echo $entry->id; ?>'">
-                            <td><?php echo $entry->id; ?></td>
-                            <td><?php echo $entry->name; ?></td>
-                            <td><?php echo $entry->user_id; ?></td>
-                            <td><?php echo $entry->location; ?></td>
-                            <td><?php echo $entry->pricing; ?></td>
+                        <tr onclick="window.location.href='/admin/listings/<?php echo $entry->getId(); ?>'">
+                            <td><?php echo $entry->getId(); ?></td>
+                            <td><?php echo $entry->getName(); ?></td>
+                            <td><?php echo $entry->getUserId(); ?></td>
+                            <td><?php echo $entry->getLocation(); ?></td>
+                            <td><?php echo $entry->getPricing(); ?></td>
                             <td><?php foreach($entry->getOptions() as $option):  ?>
                                 <?php echo $option->getName();?><br>
                                 <?php endforeach;?>
                             </td>
-                            <td><?php echo $entry->created_at; ?></td>
-                            <td><?php echo $entry->updated_at; ?></td>
+                            <td><?php echo $entry->getCreatedAt(); ?></td>
+                            <td><?php echo $entry->getUpdatedAt(); ?></td>
                             <td><a href="/admin/listings/remove/<?php echo $entry->id; ?>">X</a></td>
                         </tr>
                     <?php endforeach;?>

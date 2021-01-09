@@ -4,7 +4,6 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\ListingModel;
-use App\Models\LocationModel;
 use App\Models\OptionModel;
 
 class ListingsController extends BaseController
@@ -68,13 +67,9 @@ class ListingsController extends BaseController
         $listingModel = new ListingModel();
         $entry = $listingModel->find($id);
         if ($entry) {
-            $name = $entry['name'];
+            $name = $entry->getName();
 
-            $optionModel = new OptionModel();
-            $listingOptions = $optionModel->where('listing_id', $id)->findAll();
-            foreach ($listingOptions as $option) {
-                $optionModel->delete($option['id']);
-            }
+            $entry->removeAllOptions();
 
             if ($listingModel->delete($id)) {
                 $allEntries = (new ListingModel())->findAll();
