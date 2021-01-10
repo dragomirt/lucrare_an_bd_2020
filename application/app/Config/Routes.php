@@ -82,6 +82,9 @@ $routes->post('/admin/reports/listings', 'Admin\ReportsController::listings');
 
 $routes->get('/admin/reports/options', 'Admin\ReportsController::showOptions');
 $routes->post('/admin/reports/options', 'Admin\ReportsController::options');
+
+$routes->get('/admin/reports/users', 'Admin\ReportsController::showUsers');
+$routes->post('/admin/reports/users', 'Admin\ReportsController::users');
 /**
  * --------------------------------------------------------------------
  * Additional Routing

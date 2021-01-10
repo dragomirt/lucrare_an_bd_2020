@@ -7,6 +7,7 @@ namespace App\Controllers\Admin;
 use App\Models\ExchangeModel;
 use App\Models\ListingModel;
 use App\Models\OptionModel;
+use App\Models\UserModel;
 
 class ReportsController extends \CodeIgniter\Controller
 {
@@ -109,6 +110,46 @@ class ReportsController extends \CodeIgniter\Controller
 
         $response = "Optiunea cu idul $optionId si numele \"$optionName\" a figurat in $nrOfExchanges tranzactii. \n\n Profitul este de $profitSum$!";
 
-        return view('admin/reports/listings', compact('response'));
+        return view('admin/reports/options', compact('response'));
+    }
+
+    public function showUsers() {
+        return view('admin/reports/users');
+    }
+
+    public function users() {
+        $req = $this->request;
+        $userId = $req->getPost('user_id');
+
+        $nrOfExchanges = 0;
+        $profitSum = 0;
+
+        $listingModel = new ListingModel();
+        $listingEntity = $listingModel->where('user_id', $userId)->findAll();
+        $userInstance = "";
+
+        if (!$listingEntity) {
+            $response = "Nu exista oferte pentru utilizatorul $userId!";
+
+            return view('admin/reports/users', compact('response'));
+        }
+
+        foreach ($listingEntity as $listing) {
+            $userListingIds[] = $listing->id;
+            $userInstance = $listing->getUser();
+        }
+
+        $exchangeModel = new ExchangeModel();
+        $entities = $exchangeModel->whereIn("listing_id1", $userListingIds)->orWhereIn("listing_id2", $userListingIds)->findAll();
+
+        foreach ($entities as $entity) {
+            $nrOfExchanges += 1;
+            $profitSum += $entity->getProfit();
+        }
+
+        $fullUserName = $userInstance['first_name'] . " " . $userInstance['last_name'];
+        $response = "Utilizatorul cu idul $userId si numele \"$fullUserName\" a figurat in $nrOfExchanges tranzactii. \n\n Profitul este de $profitSum$!";
+
+        return view('admin/reports/users', compact('response'));
     }
 }

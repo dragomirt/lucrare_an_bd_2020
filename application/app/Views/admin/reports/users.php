@@ -14,9 +14,9 @@
             <?php endif; ?>
 
             <br><br>
-            <form action="/admin/reports/listings" method="POST">
-                <label for="name">Identificatorul Ofertei:</label>
-                <input type="number" name="listing_id">
+            <form action="/admin/reports/users" method="POST">
+                <label for="name">Identificatorul Utilizatorului:</label>
+                <input type="number" name="user_id">
                 <br>
                 <input type="submit" value="Raporteaza!">
             </form>
