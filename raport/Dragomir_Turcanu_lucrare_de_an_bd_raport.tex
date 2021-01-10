@@ -101,17 +101,16 @@ Exemple ale astfel de SGBD sunt următoarele.
 
 \chapter{Modelarea Datelor}
 
-\section{Modelul Logic}
+\section{Modelul Conceptual}
 
 \begin{tikzpicture}
 \begin{scope}[every node/.style={circle,thick,draw}]
     \node (users) at (3,4) {Users};
 	\node (listings) at (5, 2) {Listings};
-	\node (locations) at (2, 1) {Locations};
 	\node (options) at (5, -1) {Options};
 	\node[text width=1.5cm, align=center] (option_types) at (8, -1) {Options Types};
-	\node (pricing) at (8, 2) {Pricing};
 	\node (exchanges) at (8, 4) {Exchanges};
+	\node (requests) at (12, 2) {Requests};
 
 \end{scope}
 
@@ -124,20 +123,27 @@ Exemple ale astfel de SGBD sunt următoarele.
     	\path [->] (listings) edge (users);
     	\path [->] (users) edge (listings);
     	
-    	\path [->] (listings) edge (locations);
-    	\path [->] (locations) edge (listings);
-    	
     	\path [->] (listings) edge (options);
     	\path [->] (options) edge (listings);
     	
     	\path [->] (option_types) edge (options);
-  
-    	\path [->] (listings) edge (pricing);
-    	\path [->] (pricing) edge (listings);
+ 
     	
     	\path [->] (exchanges) edge (listings);
     	
 \end{scope}
 \end{tikzpicture}
+
+\section{Modelul Logic}
+
+Modelul logic al acestei aplicații arată în următorul mod.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=\textwidth]{apartment_exchange}
+\end{figure}
+
+Unde cheitele aurii si albastre denotă \textbf{primary key} și \textbf{foreign key} respectiv.
+
 
 \end{document}
