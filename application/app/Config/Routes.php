@@ -79,6 +79,9 @@ $routes->post('/admin/reports/time', 'Admin\ReportsController::time');
 
 $routes->get('/admin/reports/listings', 'Admin\ReportsController::showListings');
 $routes->post('/admin/reports/listings', 'Admin\ReportsController::listings');
+
+$routes->get('/admin/reports/options', 'Admin\ReportsController::showOptions');
+$routes->post('/admin/reports/options', 'Admin\ReportsController::options');
 /**
  * --------------------------------------------------------------------
  * Additional Routing

@@ -6,6 +6,7 @@ namespace App\Controllers\Admin;
 
 use App\Models\ExchangeModel;
 use App\Models\ListingModel;
+use App\Models\OptionModel;
 
 class ReportsController extends \CodeIgniter\Controller
 {
@@ -72,4 +73,42 @@ class ReportsController extends \CodeIgniter\Controller
         return view('admin/reports/listings', compact('response'));
     }
 
+    public function showOptions() {
+        return view('admin/reports/options');
+    }
+
+    public function options() {
+        $req = $this->request;
+        $optionId = $req->getPost('option_id');
+
+        $nrOfExchanges = 0;
+        $profitSum = 0;
+
+        $optionModel = new OptionModel();
+        $optionEntity = $optionModel->where('type_id', $optionId)->findAll();
+        $optionName = "";
+
+        if (!$optionModel) {
+            $response = "Comenzi cu optiunea cu idul $optionId nu exista!";
+
+            return view('admin/reports/options', compact('response'));
+        }
+
+        foreach ($optionEntity as $option) {
+            $optionListingIds[] = $option->listing_id;
+            $optionName = $option->getName();
+        }
+
+        $exchangeModel = new ExchangeModel();
+        $entities = $exchangeModel->whereIn("listing_id1", $optionListingIds)->orWhereIn("listing_id2", $optionListingIds)->findAll();
+
+        foreach ($entities as $entity) {
+            $nrOfExchanges += 1;
+            $profitSum += $entity->getProfit();
+        }
+
+        $response = "Optiunea cu idul $optionId si numele \"$optionName\" a figurat in $nrOfExchanges tranzactii. \n\n Profitul este de $profitSum$!";
+
+        return view('admin/reports/listings', compact('response'));
+    }
 }
