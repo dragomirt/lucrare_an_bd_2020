@@ -2,6 +2,17 @@
 \BOOKMARK [1][-]{section*.2}{Definitia SGBD}{chapter.1}% 2
 \BOOKMARK [1][-]{section*.2}{Baze de date relationale}{chapter.1}% 3
 \BOOKMARK [1][-]{section*.2}{SGBD \356n practica}{chapter.1}% 4
-\BOOKMARK [0][-]{chapter.2}{Modelarea Datelor}{}% 5
-\BOOKMARK [1][-]{section*.3}{Modelul Conceptual}{chapter.2}% 6
-\BOOKMARK [1][-]{section*.3}{Modelul Logic}{chapter.2}% 7
+\BOOKMARK [0][-]{chapter.2}{Domeniul de studii}{}% 5
+\BOOKMARK [1][-]{section*.3}{Scopul si obiectivele}{chapter.2}% 6
+\BOOKMARK [1][-]{Item.3}{Descrierea domeniului}{chapter.2}% 7
+\BOOKMARK [0][-]{chapter.3}{Modelarea Datelor}{}% 8
+\BOOKMARK [1][-]{section*.4}{Modelul Conceptual}{chapter.3}% 9
+\BOOKMARK [1][-]{section*.4}{Modelul Logic}{chapter.3}% 10
+\BOOKMARK [1][-]{section*.4}{Descrierea datelor}{chapter.3}% 11
+\BOOKMARK [2][-]{section*.5}{Users}{section*.4}% 12
+\BOOKMARK [2][-]{section*.5}{Listings}{section*.4}% 13
+\BOOKMARK [2][-]{section*.5}{Options}{section*.4}% 14
+\BOOKMARK [2][-]{section*.5}{Option Types}{section*.4}% 15
+\BOOKMARK [2][-]{section*.5}{Requests}{section*.4}% 16
+\BOOKMARK [2][-]{section*.5}{Exchanges}{section*.4}% 17
+\BOOKMARK [0][-]{chapter.4}{Concluzie}{}% 18

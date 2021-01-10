@@ -14,7 +14,7 @@ class RequestModel extends \CodeIgniter\Model
 
     protected $allowedFields = ['first_name', 'last_name', 'email', 'message', 'phone'];
 
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $createdField  = 'created_at';
 
     protected $validationRules    = [];

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.25)  10 JAN 2021 10:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.25)  10 JAN 2021 11:39
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -769,7 +769,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\textcommabelow' on input line 59.
 
-<./images/relational_databases_demo.png, id=63, 626.34pt x 332.442pt>
+<./images/relational_databases_demo.png, id=112, 626.34pt x 332.442pt>
 File: ./images/relational_databases_demo.png Graphic file (type png)
 <use ./images/relational_databases_demo.png>
 Package pdftex.def Info: ./images/relational_databases_demo.png  used on input 
@@ -788,30 +788,85 @@ Chapter 2.
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 104.
 
-<./images/apartment_exchange.png, id=108, 642.4pt x 728.7225pt>
-File: ./images/apartment_exchange.png Graphic file (type png)
-<use ./images/apartment_exchange.png>
-Package pdftex.def Info: ./images/apartment_exchange.png  used on input line 14
-3.
-(pdftex.def)             Requested size: 345.0pt x 391.36937pt.
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\textcommabelow' on input line 104.
+
 [5
 
-] [6 <./images/apartment_exchange.png (PNG copy)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
+]
+Chapter 3.
 
-(./Dragomir_Turcanu_lucrare_de_an_bd_raport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 149.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 149.
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 122.
+
+<./images/apartment_exchange.png, id=164, 642.4pt x 728.7225pt>
+File: ./images/apartment_exchange.png Graphic file (type png)
+<use ./images/apartment_exchange.png>
+Package pdftex.def Info: ./images/apartment_exchange.png  used on input line 16
+1.
+(pdftex.def)             Requested size: 345.0pt x 391.36937pt.
+[6
+
+]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 168.
+
+<./images/users_table.png, id=170, 1313.90875pt x 107.40125pt>
+File: ./images/users_table.png Graphic file (type png)
+<use ./images/users_table.png>
+Package pdftex.def Info: ./images/users_table.png  used on input line 173.
+(pdftex.def)             Requested size: 345.0pt x 28.2006pt.
+[7 <./images/apartment_exchange.png (PNG copy)>]
+<./images/listings_table.png, id=175, 1234.6125pt x 91.34125pt>
+File: ./images/listings_table.png Graphic file (type png)
+<use ./images/listings_table.png>
+Package pdftex.def Info: ./images/listings_table.png  used on input line 181.
+(pdftex.def)             Requested size: 345.0pt x 25.5238pt.
+<./images/options_table.png, id=176, 573.14125pt x 192.72pt>
+File: ./images/options_table.png Graphic file (type png)
+<use ./images/options_table.png>
+Package pdftex.def Info: ./images/options_table.png  used on input line 189.
+(pdftex.def)             Requested size: 345.0pt x 116.00928pt.
+<./images/option_types_table.png, id=177, 316.18124pt x 182.6825pt>
+File: ./images/option_types_table.png Graphic file (type png)
+<use ./images/option_types_table.png>
+Package pdftex.def Info: ./images/option_types_table.png  used on input line 19
+8.
+(pdftex.def)             Requested size: 345.0pt x 199.34853pt.
+ [8 <./images/users_table.png> <./images/listings_table.png> <./images/options_
+table.png>]
+<./images/requests_table.png, id=185, 1244.65pt x 111.41624pt>
+File: ./images/requests_table.png Graphic file (type png)
+<use ./images/requests_table.png>
+Package pdftex.def Info: ./images/requests_table.png  used on input line 207.
+(pdftex.def)             Requested size: 345.0pt x 30.88351pt.
+<./images/exchanges_table.png, id=186, 902.37125pt x 82.3075pt>
+File: ./images/exchanges_table.png Graphic file (type png)
+<use ./images/exchanges_table.png>
+Package pdftex.def Info: ./images/exchanges_table.png  used on input line 216.
+(pdftex.def)             Requested size: 345.0pt x 31.46806pt.
+ [9 <./images/option_types_table.png> <./images/requests_table.png> <./images/e
+xchanges_table.png>]
+Chapter 4.
+[10
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 222.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 222.
+ (./Dragomir_Turcanu_lucrare_de_an_bd_raport.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 222.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 222.
 Package rerunfilecheck Info: File `Dragomir_Turcanu_lucrare_de_an_bd_raport.out
 ' has not changed.
-(rerunfilecheck)             Checksum: 5A0A6C0B5B59810E7B6D0815B886AD0C;414.
+(rerunfilecheck)             Checksum: 71E104E7B1714C923F90EBF8C927D88C;1036.
  ) 
 Here is how much of TeX's memory you used:
- 19228 strings out of 482056
- 379982 string characters out of 5937674
- 663483 words of memory out of 5000000
- 34511 multiletter control sequences out of 15000+600000
+ 19288 strings out of 482056
+ 381246 string characters out of 5937674
+ 663490 words of memory out of 5000000
+ 34560 multiletter control sequences out of 15000+600000
  540966 words of font info for 52 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  60i,8n,67p,876b,839s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -836,11 +891,11 @@ local/texlive/2020basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></
 usr/local/texlive/2020basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb
 ></usr/local/texlive/2020basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.
 pfb>
-Output written on Dragomir_Turcanu_lucrare_de_an_bd_raport.pdf (7 pages, 544644
- bytes).
+Output written on Dragomir_Turcanu_lucrare_de_an_bd_raport.pdf (11 pages, 62267
+1 bytes).
 PDF statistics:
- 187 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
- 21 named destinations out of 1000 (max. 500000)
- 79 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 269 PDF objects out of 1000 (max. 8388607)
+ 219 compressed objects within 3 object streams
+ 32 named destinations out of 1000 (max. 500000)
+ 197 words of extra memory for PDF output out of 10000 (max. 10000000)
 

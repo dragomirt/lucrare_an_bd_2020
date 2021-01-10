@@ -99,6 +99,24 @@ Exemple ale astfel de SGBD sunt următoarele.
 	\item Oracle NoSQL DB
 \end{itemize}
 
+\chapter{Domeniul de studii}
+
+\section{Scopul și obiectivele}
+Crearea unui SGBD privind gestionarea datelor ce descriu schimbul de apartamente în baza locației și a prețului și generarea informației relevante pentru cumpărători în scopul creării comenzilor online.
+
+\begin{enumerate}
+	\item Gestionarea produselor de catre administratori
+	
+	\item În baza datelor despre produse, crearea transactiilor de catre administratori.
+	
+	\item Crearea rapoartelor pentru cadrele manageriale.
+\end{enumerate}
+
+\section{Descrierea domeniului}
+Ultimii ani oamenii au devenit tot mai curioși și investiți în călătorii. Ca răspund la cererea crescută apar diferite concepte pentru a ușura și a ieftini acest proces. Acest produs cade exact în această categorie.
+
+Serviciul de schimb de apartamente presupune un \textbf{exchange} de locuință de perioadă scurtă pentru cei doritori de a vedea locuri noi și de a o face mult mai ieftin decat ar fi posibil prin intermediul hotelurilor și a chiriilor. Astfel, doritorii de astfel de aventură plasează informație personală și locuința disponibilă pe platformă, iar managerii companiei, considerând descrierea și preferințele utilizatorilor propun variante de schimb la prețuri avantajoase.
+
 \chapter{Modelarea Datelor}
 
 \section{Modelul Conceptual}
@@ -145,5 +163,60 @@ Modelul logic al acestei aplicații arată în următorul mod.
 
 Unde cheitele aurii si albastre denotă \textbf{primary key} și \textbf{foreign key} respectiv.
 
+\section{Descrierea datelor}
+
+\subsection{Users}
+Este tabelul în care este salvată informația despre clienții serviciului. Aici sunt salvate date despre preferințe, date de contact și cele personale pentru a utilizarea platformei.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=\textwidth]{users_table}
+\end{figure}
+
+\subsection{Listings}
+Este tabelul de bază ce conține datele despre toate ofertele disponibile. Acestea sunt legate cu \textbf{users} și \textbf{options} pentru a determina legăturile logice în date.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=\textwidth]{listings_table}
+\end{figure}
+
+\subsection{Options}
+Este tabelul ce răspunde de indicarea relației \textbf{Many-To-Many} a ofertelor și optiunilor disponibile.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=\textwidth]{options_table}
+\end{figure}
+
+
+\subsection{Option Types}
+Aici sunt plasate toate opțiunile disponibile.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=\textwidth]{option_types_table}
+\end{figure}
+
+
+\subsection{Requests}
+Conține datele despre cererile de pe pagina de start a aplicației. Este presupus că este punctul de primar de interacțiune cu serviciul.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=\textwidth]{requests_table}
+\end{figure}
+
+
+\subsection{Exchanges}
+Conține datele despre transacțiile și profitul generat de către serviuciul în cauză. Punctul primar de generare a rapoartelor.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=\textwidth]{exchanges_table}
+\end{figure}
+
+\chapter{Concluzie}
+Dezvoltarea acestui serviciu a fost o experiență interesantă ce a mi-a permis să privesc proiectul din dintr-o perspectivă diferită.
 
 \end{document}

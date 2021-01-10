@@ -31,7 +31,7 @@ class ListingsController extends BaseController
         $listingObject = new ListingModel();
         $data = array(
             'name' => $name,
-            'user_id' => $user_id,
+            'user_id' => (int) $user_id,
             'location' => $location,
             'pricing' => $pricing
         );
